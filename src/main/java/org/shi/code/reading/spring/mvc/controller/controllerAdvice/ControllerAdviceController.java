@@ -17,7 +17,7 @@ import java.util.Map;
  * 2、全局数据绑定
  * 3、全局数据预处理
  */
-@ControllerAdvice
+@ControllerAdvice(basePackages = "org.shi.code.reading.spring.mvc.controller.initBinder")
 public class ControllerAdviceController {
 
     //全局异常处理
