@@ -1,5 +1,6 @@
 package org.shi.code.reading.spring.mvc.controller;
 
+import org.shi.code.reading.spring.mvc.bean.Request;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,11 +18,12 @@ public class JsonController {
 
     @ResponseBody
     @RequestMapping("/json")
-    public List<User> json(){
+    public List<User> json(@RequestBody Request<User> request) {
         List<User> list = new ArrayList<User>();
         list.add(new User(1,"zhangsan",12,"man"));
         list.add(new User(2,"zhangsan2",13,"woman"));
         list.add(new User(3,"zhangsan3",14,"man"));
+        list.add(request.getData());
         return list;
     }
 
